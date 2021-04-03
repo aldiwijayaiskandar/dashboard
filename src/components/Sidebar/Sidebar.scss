@@ -1,0 +1,109 @@
+.sidebar-container {
+  width: 330px;
+  height: 100vh;
+  border-right: 0.1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+
+  .sidebar-header {
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    .hamburger-container {
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .sidebar-body {
+    margin-top: 20px;
+    .sidebar-item {
+      height: 40px;
+      margin-right: 16px;
+      border-radius: 0 20px 20px 0;
+
+      // display
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      // color
+      color: rgba(67, 167, 155, 1);
+
+      .sidebar-item-icon {
+        margin-left: 15px;
+        font-size: 16px;
+      }
+
+      .sidebar-item-name {
+        font-size: 14px;
+        margin-left: 15px;
+      }
+
+      // mouse
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(67, 167, 155, 0.6);
+        color: white;
+      }
+    }
+
+    .sidebar-item-active {
+      @extend .sidebar-item;
+      background-color: rgba(67, 167, 155, 1);
+      color: white;
+
+      &:hover {
+        background-color: rgba(67, 167, 155, 1);
+        color: white;
+      }
+    }
+  }
+}
+
+.sidebar-container-close {
+  @extend .sidebar-container;
+  width: 60px !important;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+
+  .sidebar-header {
+    justify-content: center;
+  }
+
+  .sidebar-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .sidebar-item {
+      margin: 0px;
+      margin-bottom: 5px;
+      height: 20px;
+      width: 20px;
+      padding: 7.5px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .sidebar-item-icon{
+        margin: 0;
+      }
+      .sidebar-item-name {
+        display: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .logo {
+    display: none;
+  }
+}

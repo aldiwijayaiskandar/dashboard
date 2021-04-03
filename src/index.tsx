@@ -18,10 +18,11 @@ import { createBrowserHistory } from "history";
 
 // Core Pages
 import { Route, Router, Switch } from "react-router";
-import { EcommerceLayout } from "./Layout/ECommerce";
+import { EcommerceDashboardLayout } from "./Layout/ECommerceDashboardLayout";
 
 // Web Performance Measure
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 const hist = createBrowserHistory();
 
@@ -32,13 +33,10 @@ ReactDOM.render(
         <Helmet>
           <title>App Title Boilerplate</title>
         </Helmet>
-        <Router history={hist}>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/" component={EcommerceLayout} />
-            <Route path="*" exact component={NotFound} />
-          </Switch>
-        </Router>
+        <BrowserRouter>
+          <Route path="/login" component={Login} />
+          <Route path="/" component={EcommerceDashboardLayout} />
+        </BrowserRouter>
       </HelmetProvider>
     </PersistGate>
   </Provider>,
