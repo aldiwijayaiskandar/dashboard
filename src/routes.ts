@@ -1,12 +1,13 @@
 import React from "react";
 import { HomePage, ItemPage, NotFound } from "./pages";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faHome, faList } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faAdjust } from "@fortawesome/free-solid-svg-icons";
 export interface Route {
-  path: string;
+  path?: string;
   icon: IconProp;
   name: string;
-  component: () => JSX.Element;
+  component?: () => JSX.Element;
+  children?: Route[];
 }
 
 export const routes: Route[] = [
@@ -17,9 +18,16 @@ export const routes: Route[] = [
     component: HomePage,
   },
   {
-    path: "/items",
-    icon: faList,
-    name: "Items",
-    component: ItemPage,
+    path: "/configuration",
+    icon: faAdjust,
+    name: "Configuration",
+    children: [
+      {
+        path: "/test",
+        icon: faHome,
+        name: "Test",
+        component: HomePage,
+      },
+    ],
   },
 ];

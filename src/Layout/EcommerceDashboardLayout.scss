@@ -1,14 +1,16 @@
+@import "../theme/color.scss";
+
 .layout-container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: row;
 }
 
 .content-container {
   width: 100%;
-  height: 100vh;
-  background-color: rgba(67, 167, 155, 0.075);
+  height: auto;
+  background-color: $body-color;
 
   .content-container-body {
     padding: 15px;
